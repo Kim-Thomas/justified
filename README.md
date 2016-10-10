@@ -74,6 +74,9 @@ Most of the customizing work will be done directly in the CSS, here is the comme
 - **gridItems** : your grid items selector
 - **enableImagesLoaded** : (*optional*)(*default: false*) determine if justified should use the awesome plugin from Dessandro "ImagesLoaded" ( you'll have to include it yourself though ).
 
+### MIT License
+Justified is released under the MIT License. Have fun with it.
+
 ### Credits
-- Pictures : they are all from pixabay :) thanks to their awesome users sharing these super cool pictures !
-- ImagesLoaded : another awesome jquery plugin from Dessandro. Check his website : https://github.com/desandro/imagesloaded
+- **Demo Pictures** : they are all from pixabay :) thanks to their awesome users sharing these super cool pictures !
+- **ImagesLoaded** : another awesome jquery plugin from Dessandro. Check his website : https://github.com/desandro/imagesloaded
