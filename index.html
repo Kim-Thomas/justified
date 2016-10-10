@@ -49,19 +49,70 @@
 <p>You can now initialize the grid according to the html </p>
 
 <div class="highlight highlight-text-html-basic"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
-<span class="pl-s1">  <span class="pl-k">var</span> grid <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">justifiedGrid</span>(<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#grid-container<span class="pl-pds">'</span></span>), <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.grid-item<span class="pl-pds">'</span></span>));</span>
+<span class="pl-s1">  <span class="pl-k">var</span> parameters <span class="pl-k">=</span> {</span>
+<span class="pl-s1">    gridContainer<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>#grid-container<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    gridItems<span class="pl-k">:</span> <span class="pl-s"><span class="pl-pds">'</span>.grid-item<span class="pl-pds">'</span></span>,</span>
+<span class="pl-s1">    enableImagesLoaded<span class="pl-k">:</span> <span class="pl-c1">false</span></span>
+<span class="pl-s1">  };</span>
+<span class="pl-s1">  <span class="pl-k">var</span> grid <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">justifiedGrid</span>(parameters);</span>
 <span class="pl-s1">  <span class="pl-smi">grid</span>.<span class="pl-en">initGrid</span>();</span>
 <span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
 
 <h3>
-<a id="imagesloaded-compatibility" class="anchor" href="#imagesloaded-compatibility" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>ImagesLoaded compatibility</h3>
+<a id="customizing" class="anchor" href="#customizing" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Customizing</h3>
 
-<p>You can allow justified grid to work with the jQuery plugin imagesLoaded by Dessandro this way :</p>
+<p>Most of the customizing work will be done directly in the CSS, here is the commented version</p>
 
-<div class="highlight highlight-text-html-basic"><pre><span class="pl-s1">&lt;<span class="pl-ent">script</span>&gt;</span>
-<span class="pl-s1">  <span class="pl-k">var</span> grid <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-en">justifiedGrid</span>(<span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>#grid-container<span class="pl-pds">'</span></span>), <span class="pl-en">$</span>(<span class="pl-s"><span class="pl-pds">'</span>.grid-item<span class="pl-pds">'</span></span>), <span class="pl-c1">true</span>);</span>
-<span class="pl-s1">  <span class="pl-smi">grid</span>.<span class="pl-en">initGrid</span>();</span>
-<span class="pl-s1">&lt;/<span class="pl-ent">script</span>&gt;</span></pre></div>
+<div class="highlight highlight-source-css"><pre><span class="pl-e">#grid-container</span> { // T<span class="pl-c1">he</span> <span class="pl-c1"><span class="pl-c1">grid</span></span> <span class="pl-c1">container</span>
+  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">90<span class="pl-k">%</span></span>; // <span class="pl-c1">well</span>, <span class="pl-c1">the</span> <span class="pl-c1"><span class="pl-c1">width</span></span>, <span class="pl-c1">obviously</span>
+  <span class="pl-c1"><span class="pl-c1">margin</span></span>: <span class="pl-c1">auto</span>; // <span class="pl-c1">just</span> <span class="pl-c1">in</span> <span class="pl-c1">order</span> <span class="pl-c1">to</span> <span class="pl-c1">center</span> <span class="pl-c1">it</span>
+  <span class="pl-c1"><span class="pl-c1">overflow</span></span>: <span class="pl-c1">hidden</span>; // <span class="pl-c1">important</span>, <span class="pl-c1">it</span> <span class="pl-c1">allows</span> <span class="pl-c1">this</span> <span class="pl-c1">div</span> <span class="pl-c1">to</span> <span class="pl-c1">actually</span> <span class="pl-c1">have</span> <span class="pl-c1">a</span> <span class="pl-c1"><span class="pl-c1">height</span></span> <span class="pl-c1">since</span> <span class="pl-c1"><span class="pl-c1">grid</span></span> <span class="pl-c1">items</span> <span class="pl-c1">are</span> <span class="pl-c1">in</span> <span class="pl-c1"><span class="pl-c1">float</span></span>:<span class="pl-c1">left</span>;
+}
+
+<span class="pl-e">.grid-item</span> {
+  <span class="pl-c1"><span class="pl-c1">opacity</span></span>: <span class="pl-c1">0</span>; // <span class="pl-c1">for</span> <span class="pl-c1">the</span> <span class="pl-c1"><span class="pl-c1">animation</span></span>, <span class="pl-c1">you</span> <span class="pl-c1">can</span> <span class="pl-c1">remove</span> <span class="pl-c1">it</span>.
+  <span class="pl-c1"><span class="pl-c1">float</span></span>: <span class="pl-c1">left</span>; // <span class="pl-c1">important</span>
+  <span class="pl-c1"><span class="pl-c1">padding</span></span>: <span class="pl-c1">5<span class="pl-k">px</span></span>; // <span class="pl-c1">the</span> <span class="pl-c1">gutter</span>
+  <span class="pl-c1"><span class="pl-c1">box-sizing</span></span>: border-box; // <span class="pl-c1">so</span> <span class="pl-c1">that</span> <span class="pl-c1">the</span> <span class="pl-c1">gutter</span> <span class="pl-c1">works</span> <span class="pl-c1">well</span>
+}
+
+<span class="pl-e">.grid-item</span> <span class="pl-ent">img</span> { // <span class="pl-c1">just</span> <span class="pl-c1">in</span> <span class="pl-c1">case</span> <span class="pl-c1">you</span> <span class="pl-c1">want</span> <span class="pl-c1">to</span> <span class="pl-c1"><span class="pl-c1">wrap</span></span> <span class="pl-c1">the</span> <span class="pl-c1"><span class="pl-c1">image</span></span> <span class="pl-c1">inside</span> <span class="pl-c1">a</span> <span class="pl-c1">link</span> <span class="pl-c1">for</span> <span class="pl-c1">example</span>
+  <span class="pl-c1"><span class="pl-c1">width</span></span>: <span class="pl-c1">100<span class="pl-k">%</span></span>;
+  <span class="pl-c1"><span class="pl-c1">height</span></span>: <span class="pl-c1">100<span class="pl-k">%</span></span>;
+}
+
+<span class="pl-e">.grid-item.loaded</span> { // <span class="pl-c1">the</span> <span class="pl-c1">loaded</span> <span class="pl-c1"><span class="pl-c1">animation</span></span>
+  <span class="pl-c1"><span class="pl-c1">opacity</span></span>: <span class="pl-c1">1</span>;
+  <span class="pl-c1"><span class="pl-c1">transition</span></span>: opacity <span class="pl-c1">.5<span class="pl-k">s</span></span>;
+}</pre></div>
+
+<h3>
+<a id="options" class="anchor" href="#options" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Options</h3>
+
+<ul>
+<li>
+<strong>gridContainer</strong> : your grid container selector</li>
+<li>
+<strong>gridItems</strong> : your grid items selector</li>
+<li>
+<strong>enableImagesLoaded</strong> : (<em>optional</em>)(<em>default: false</em>) determine if justified should use the awesome plugin from Dessandro "ImagesLoaded" ( you'll have to include it yourself though ).</li>
+</ul>
+
+<h3>
+<a id="mit-license" class="anchor" href="#mit-license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>MIT License</h3>
+
+<p>Justified is released under the MIT License. Have fun with it.</p>
+
+<h3>
+<a id="credits" class="anchor" href="#credits" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Credits</h3>
+
+<ul>
+<li>
+<strong>Demo Pictures</strong> : they are all from pixabay :) thanks to their awesome users sharing these super cool pictures !</li>
+<li>
+<strong>ImagesLoaded</strong> : another awesome jquery plugin from Dessandro. Check his website : <a href="https://github.com/desandro/imagesloaded">https://github.com/desandro/imagesloaded</a>
+</li>
+</ul>
 
       <footer class="site-footer">
         <span class="site-footer-owner"><a href="https://github.com/Kim-Thomas/justified">Justified</a> is maintained by <a href="https://github.com/Kim-Thomas">Kim-Thomas</a>.</span>
