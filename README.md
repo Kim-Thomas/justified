@@ -36,8 +36,36 @@ You can now initialize the grid according to the html
 </script>
 ```
 
+### Customizing
+Most of the customizing work will be done directly in the CSS, here is the commented version
+
+```css
+#grid-container { // The grid container
+  width: 90%; // well, the width, obviously
+  margin: auto; // just in order to center it
+  overflow: hidden; // important, it allows this div to actually have a height since grid items are in float:left;
+}
+
+.grid-item {
+  opacity: 0; // for the animation, you can remove it.
+  float: left; // important
+  padding: 5px; // the gutter
+  box-sizing: border-box; // so that the gutter works well
+}
+
+.grid-item img { // just in case you want to wrap the image inside a link for example
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item.loaded { // the loaded animation
+  opacity: 1;
+  transition: opacity .5s;
+}
+```
+
 ### ImagesLoaded compatibility
-You can allow justified grid to work with the jQuery plugin imagesLoaded by Dessandro this way :
+You can allow justified grid to work with the jQuery plugin imagesLoaded by Dessandro this way
 
 ```html
 <script>
