@@ -36,7 +36,12 @@
       <script src="dist/js/imagesLoaded.min.js"></script>
       <script src="dist/js/justified.js"></script>
       <script>
-        var grid = new justifiedGrid($('#grid-container'), $('.grid-item'), true);
+        var parameters = {
+          gridContainer: '#grid-container',
+          gridItems: '.grid-item',
+          enableImagesLoaded: false
+        };
+        var grid = new justifiedGrid(parameters);
         grid.initGrid();
       </script>
     </body>

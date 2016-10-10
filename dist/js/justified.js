@@ -3,11 +3,11 @@
 * MIT License
 */
 
-function justifiedGrid(grid_container_selector, grid_items_selector, imagesLoadedEnabled) {
+function justifiedGrid(parameters) {
   
-  var $hgrid_container = grid_container_selector;
-  var $hgrid_items = grid_items_selector;
-  var imagesLoadedEnabled = imagesLoadedEnabled;
+  var $hgrid_container = $(parameters.gridContainer);
+  var $hgrid_items = $(parameters.gridItems);
+  var imagesLoadedEnabled = parameters.enableImagesLoaded;
   
   function hgrid_get_orientation(element) {
     if(element.width() >= element.height()) {
