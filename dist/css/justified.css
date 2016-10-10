@@ -1,0 +1,22 @@
+#grid-container {
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.grid-item {
+  opacity: 0;
+  float: left;
+  padding: 5px;
+  box-sizing: border-box;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+}
+
+.grid-item.loaded {
+  opacity: 1;
+  transition: opacity .5s;
+}

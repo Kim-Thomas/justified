@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Justified Grid Demo</title>
+      <!-- Custom Style -->
+      <link href="dist/css/justified.css" rel="stylesheet">
+    </head>
+    
+    <body>
+        
+      <div id="grid-container">
+        <a href="" class="grid-item" ><img src="images/akihabara.jpg"></a>
+        <a href="" class="grid-item" ><img src="images/akihabara.jpg"></a>
+        <a href="" class="grid-item" ><img src="images/akihabara.jpg"></a>
+        <img class="grid-item" src="images/tokyo-night.jpg">
+        <img class="grid-item" src="images/tokyo-tower.jpg">
+        <img class="grid-item" src="images/tokyo-view.jpg">
+        <img class="grid-item" src="images/akihabara.jpg">
+        <img class="grid-item" src="images/fuji.jpg">
+        <img class="grid-item" src="images/lake-fuji.jpg">
+        <img class="grid-item" src="images/tokyo-night.jpg">
+        <img class="grid-item" src="images/tokyo-tower.jpg">
+        <img class="grid-item" src="images/tokyo-view.jpg">
+        <img class="grid-item" src="images/akihabara.jpg">
+        <img class="grid-item" src="images/fuji.jpg">
+        <img class="grid-item" src="images/lake-fuji.jpg">
+        <img class="grid-item" src="images/tokyo-night.jpg">
+        <img class="grid-item" src="images/tokyo-tower.jpg">
+        <img class="grid-item" src="images/tokyo-view.jpg">
+      </div>
+      
+      <script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+      <script src="dist/js/imagesLoaded.min.js"></script>
+      <script src="dist/js/justified.js"></script>
+      <script>
+        var grid = new justifiedGrid($('#grid-container'), $('.grid-item'), true);
+        grid.initGrid();
+      </script>
+    </body>
+</html>
