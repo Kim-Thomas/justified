@@ -8,6 +8,7 @@ function justifiedGrid(parameters) {
   var $hgrid_container = $(parameters.gridContainer);
   var $hgrid_items = $(parameters.gridItems);
   var imagesLoadedEnabled = parameters.enableImagesLoaded;
+	var gutter = parameters.gutter;
   
   function hgrid_get_orientation(element) {
     if(element.width() >= element.height()) {
@@ -20,6 +21,7 @@ function justifiedGrid(parameters) {
   function grid_initialisation($hgrid_items) {
     // Step 0 : Index the hgrid-items, reinit datas
     $hgrid_items.each(function(index) {
+			$(this).css('padding', gutter+"px");
       $(this).attr('data-index', index); 
       $(this).addClass('hgrid-item loaded');
       $(this).removeClass('resized');

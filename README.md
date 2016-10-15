@@ -11,7 +11,7 @@ Include the justified.js file and the justified.css file.
 
 ```html
 <!-- Just before closing body tag -->
-<script src="js/justified.js"></script>
+<script src="js/justified.min.js"></script>
 ```
 
 Let's now write the HTML
@@ -34,6 +34,7 @@ You can now initialize the grid according to the html
   var parameters = {
     gridContainer: '#grid-container',
     gridItems: '.grid-item',
+	  gutter: 5,
     enableImagesLoaded: false
   };
   var grid = new justifiedGrid(parameters);
@@ -54,7 +55,6 @@ Most of the customizing work will be done directly in the CSS, here is the comme
 .grid-item {
   opacity: 0; // for the animation, you can remove it.
   float: left; // important
-  padding: 5px; // the gutter
   box-sizing: border-box; // so that the gutter works well
 }
 
@@ -72,6 +72,7 @@ Most of the customizing work will be done directly in the CSS, here is the comme
 ### Options
 - **gridContainer** : your grid container selector
 - **gridItems** : your grid items selector
+- **gutter** : set the margins between images
 - **enableImagesLoaded** : (*optional*)(*default: false*) determine if justified should use the awesome plugin from Dessandro "ImagesLoaded" ( you'll have to include it yourself though ).
 
 ### MIT License
